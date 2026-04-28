@@ -32,15 +32,39 @@
             padding: 48px 24px;
         }
 
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-        }
+        .container { max-width: 860px; margin: 0 auto; }
 
         header {
             margin-bottom: 48px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .header-links a {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .header-links a:hover { color: var(--accent); }
+
+        .header-links .sep {
+            color: var(--border-bright);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
         }
 
         .label {
@@ -56,12 +80,9 @@
             font-size: 28px;
             font-weight: 400;
             letter-spacing: -0.02em;
-            color: var(--text);
         }
 
-        h1 span {
-            color: var(--text-dim);
-        }
+        h1 span { color: var(--text-dim); }
 
         .login-grid {
             display: grid;
@@ -71,11 +92,7 @@
             align-items: end;
         }
 
-        .field {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+        .field { display: flex; flex-direction: column; gap: 6px; }
 
         .field label {
             font-family: 'IBM Plex Mono', monospace;
@@ -97,15 +114,10 @@
             width: 100%;
         }
 
-        input:focus {
-            border-color: var(--accent);
-        }
+        input:focus { border-color: var(--accent); }
+        input::placeholder { color: var(--text-dim); }
 
-        input::placeholder {
-            color: var(--text-dim);
-        }
-
-        button {
+        button#fetch {
             background: var(--accent);
             color: #0a0a0a;
             border: none;
@@ -118,11 +130,10 @@
             text-transform: uppercase;
             transition: opacity 0.15s;
             white-space: nowrap;
-            height: fit-content;
         }
 
-        button:hover { opacity: 0.85; }
-        button:disabled { opacity: 0.4; cursor: not-allowed; }
+        button#fetch:hover { opacity: 0.85; }
+        button#fetch:disabled { opacity: 0.4; cursor: not-allowed; }
 
         .status {
             font-family: 'IBM Plex Mono', monospace;
@@ -138,11 +149,11 @@
         .status.error { color: var(--red); }
 
         .dot {
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: var(--accent);
             animation: pulse 1s ease-in-out infinite;
+            flex-shrink: 0;
         }
 
         @keyframes pulse {
@@ -163,26 +174,20 @@
             color: var(--text-mid);
         }
 
-        .count span {
-            color: var(--accent);
-            font-weight: 500;
-        }
+        .count span { color: var(--accent); font-weight: 500; }
 
-        .filter-row {
-            display: flex;
-            gap: 8px;
-        }
+        .filter-row { display: flex; gap: 8px; }
 
         .filter-btn {
             background: transparent;
             border: 1px solid var(--border-bright);
             color: var(--text-mid);
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 10px;
             padding: 4px 10px;
             cursor: pointer;
-            font-family: 'IBM Plex Mono', monospace;
-            letter-spacing: 0.08em;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
             transition: all 0.15s;
         }
 
@@ -192,11 +197,7 @@
             background: var(--accent-dim);
         }
 
-        .assignments-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
+        .assignments-list { display: flex; flex-direction: column; gap: 1px; }
 
         .assignment-card {
             background: var(--surface);
@@ -211,9 +212,7 @@
             opacity: 0;
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { to { opacity: 1; } }
 
         .assignment-card:hover {
             border-color: var(--border-bright);
@@ -253,7 +252,6 @@
         .title {
             font-size: 13px;
             font-weight: 400;
-            color: var(--text);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -290,15 +288,21 @@
 
         @media (max-width: 600px) {
             .login-grid { grid-template-columns: 1fr; }
-            .title { font-size: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="label">DPS Electronic City</div>
-            <h1>Entrar Assignments <span>/ Dashboard</span></h1>
+            <div>
+                <div class="label">DPS Electronic City</div>
+                <h1>Assignments <span>/ Dashboard</span></h1>
+            </div>
+            <div class="header-links">
+                <a href="https://github.com/fourtysevencode/pretty-entrar-dashboard" target="_blank">GitHub ↗</a>
+                <span class="sep">/</span>
+                <a href="https://ronakbuilds.tech" target="_blank">ronakbuilds.tech ↗</a>
+            </div>
         </header>
 
         <div class="login-grid">
@@ -360,7 +364,7 @@
                 const type = getFileType(a.url)
                 const card = document.createElement("div")
                 card.className = "assignment-card"
-                card.style.animationDelay = `${i * 30}ms`
+                card.style.animationDelay = `${i * 25}ms`
                 card.innerHTML = `
                     <div class="card-left">
                         <span class="file-badge ${type}">${type}</span>
@@ -372,11 +376,11 @@
             })
         }
 
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"))
-                btn.classList.add("active")
-                activeFilter = btn.dataset.filter
+        document.querySelectorAll(".filter-btn").forEach(b => {
+            b.addEventListener("click", () => {
+                document.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"))
+                b.classList.add("active")
+                activeFilter = b.dataset.filter
                 renderCards(allAssignments)
             })
         })
