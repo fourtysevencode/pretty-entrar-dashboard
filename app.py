@@ -6,8 +6,23 @@ from utils.assignment_extractor import extract_assignments
 from fastapi.templating import Jinja2Templates
 from fastapi .responses import HTMLResponse
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://assignments.ronakbuilds.tech",
+        "https://pretty-entrar-dashboard.onrender.com/"
+    ],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
+
+
 templates = Jinja2Templates(directory="templates")
 
 class login_info(BaseModel):
