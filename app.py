@@ -16,7 +16,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://assignments.ronakbuilds.tech",
-        "https://pretty-entrar-dashboard.onrender.com/"
+        "https://pretty-entrar-dashboard.onrender.com"
     ],
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],
