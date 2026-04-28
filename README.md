@@ -9,7 +9,7 @@ It's difficult to find entrar assignments with ease, especially if you're in a h
 ## Structure
 
 ```
-pretty-entrar-dashboard
+pretty-entrar-dashboard/
 ├── templates/
 │   └── index.html
 ├── utils/
