@@ -6,6 +6,21 @@
 
 It's difficult to find entrar assignments with ease, especially if you're in a hurry. They are hidden behind multiple pages and dropdowns. Pretty Entrar Dashboard comes in and saves you from all the trouble. Simply login with your credentials and find all assignments instantly! No hunting needed anymore.
 
+## Structure
+
+```
+pretty-entrar-dashboard
+├── templates/
+│   └── index.html
+├── utils/
+│   └── assignment_extractor.py
+├── .gitignore
+├── app.py
+├── assignment_extractor_pipeline.py
+├── README.md
+└── requirements.txt
+```
+
 ## Architecture
 
 ```
