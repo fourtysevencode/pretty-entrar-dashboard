@@ -33,7 +33,7 @@ pretty-entrar-dashboard/
 │   │  POST /login/auth/   │──────────────────────►  entrar.in        │
 │   │  { username, pass }  │                                          │
 │   │                      │◄──────────────────────  Set-Cookie:      │
-│   │  session cookie ✓    │                          session_id      │
+│   │  session cookie      │                          session_id      │
 │   └──────────┬───────────┘                                          │
 │              │                                                      │
 │              │ session.post(/pp_assignment/classassignment)         │
@@ -59,7 +59,7 @@ pretty-entrar-dashboard/
 │   │  /fetch-assignments  │                                          │
 │   │                      │                                          │
 │   │  return assignment   │                                          │
-│   │  _list  →  JSON ✓    │                                          │
+│   │  _list  →  JSON      │                                          │
 │   └──────────┬───────────┘                                          │
 │              │                                                      │
 └──────────────┼──────────────────────────────────────────────────────┘
@@ -74,8 +74,8 @@ pretty-entrar-dashboard/
    │   fetch("/fetch-assignments")                 │
    │                                               │ 
    │   renderCards(data)                           │
-   │   [ PDF ]  title  ↗                           │
-   │   [DOCX]  title  ↗                            │
+   │   [ PDF ]  title                              │
+   │   [DOCX]  title                               │
    └───────────────────────────────────────────────┘
 ```
 
