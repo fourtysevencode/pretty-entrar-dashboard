@@ -92,6 +92,13 @@
             align-items: end;
         }
 
+        .credentials-disclaimer {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            color: var(--text-mid);
+            margin-bottom: 0;
+        }
+
         .field { display: flex; flex-direction: column; gap: 6px; }
 
         .field label {
@@ -287,6 +294,17 @@
         }
 
         @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .header-links {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
             .login-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -316,6 +334,7 @@
             </div>
             <button id="fetch">Fetch →</button>
         </div>
+        <div class="credentials-disclaimer" id="credentials-disclaimer">your credentials are never saved, only used to log in</div>
 
         <div class="status" id="status"></div>
 
@@ -340,6 +359,7 @@
         const list = document.getElementById("list")
         const resultsWrapper = document.getElementById("results-wrapper")
         const countEl = document.getElementById("count")
+        const disclaimerEl = document.getElementById("credentials-disclaimer")
         const BASE = "https://pretty-entrar-dashboard.onrender.com"
 
         let allAssignments = []
@@ -386,6 +406,7 @@
         })
 
         btn.addEventListener("click", async () => {
+            disclaimerEl.style.display = "none"
             const username = usernameEl.value.trim()
             const password = passwordEl.value.trim()
 

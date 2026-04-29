@@ -8,8 +8,6 @@ from fastapi .responses import HTMLResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-
-
 app = FastAPI()
 
 app.add_middleware(
