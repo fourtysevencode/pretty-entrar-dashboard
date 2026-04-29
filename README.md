@@ -67,17 +67,16 @@ pretty-entrar-dashboard/
                │  HTTP  application/json
                │
                ▼
-   ┌───────────────────────┐
-   │   render.com          │
-   │                       │
-   │   index.html          │
-   │   fetch("/fetch-      │
-   │    assignments")      │
-   │                       │
-   │   renderCards(data)   │
-   │   [ PDF ]  title  ↗   │
-   │   [DOCX]  title  ↗    │
-   └───────────────────────┘
+   ┌───────────────────────────────────────────────┐
+   │   https://assignments.ronakbuilds.tech/       │
+   │                                               │
+   │   index.html                                  │
+   │   fetch("/fetch-assignments")                 │
+   │                                               │ 
+   │   renderCards(data)                           │
+   │   [ PDF ]  title  ↗                           │
+   │   [DOCX]  title  ↗                            │
+   └───────────────────────────────────────────────┘
 ```
 
 ## Running locally
