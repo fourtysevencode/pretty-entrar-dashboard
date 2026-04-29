@@ -91,6 +91,7 @@ cd pretty-entrar-dashboard
 
 uvicorn app:app --reload
 ```
+
 Update `base` in templates/index.html to `http://localhost:8000` (line 343)
 
 Then head to `http://localhost:8000` on your preferred web browser.
