@@ -30,16 +30,16 @@ pretty-entrar-dashboard/
 │   ┌──────────────────────┐                                          │
 │   │   requests.Session() │                                          │
 │   │                      │                                          │
-│   │  POST /login/auth/   │──────────────────────►  entrar.in       │
+│   │  POST /login/auth/   │──────────────────────►  entrar.in        │
 │   │  { username, pass }  │                                          │
-│   │                      │◄──────────────────────  Set-Cookie:     │
+│   │                      │◄──────────────────────  Set-Cookie:      │
 │   │  session cookie ✓    │                          session_id      │
 │   └──────────┬───────────┘                                          │
-│              │                                                       │
-│              │ session.post(/pp_assignment/classassignment)          │
-│              │ { search_assignment: true }                           │
-│              │                                                       │
-│              ▼                                                       │
+│              │                                                      │
+│              │ session.post(/pp_assignment/classassignment)         │
+│              │ { search_assignment: true }                          │
+│              │                                                      │
+│              ▼                                                      │
 │   ┌──────────────────────┐                                          │
 │   │   BeautifulSoup      │◄──── raw HTML (AJAX response)            │
 │   │                      │                                          │
@@ -48,10 +48,10 @@ pretty-entrar-dashboard/
 │   │  "attachment_display"│                                          │
 │   │   style="color:red") │                                          │
 │   └──────────┬───────────┘                                          │
-│              │                                                       │
+│              │                                                      │
 │              │  [ { title, url }, { title, url }, ... ]             │
-│              │                                                       │
-│              ▼                                                       │
+│              │                                                      │
+│              ▼                                                      │
 │   ┌──────────────────────┐                                          │
 │   │   FastAPI            │                                          │
 │   │                      │                                          │
@@ -61,7 +61,7 @@ pretty-entrar-dashboard/
 │   │  return assignment   │                                          │
 │   │  _list  →  JSON ✓    │                                          │
 │   └──────────┬───────────┘                                          │
-│              │                                                       │
+│              │                                                      │
 └──────────────┼──────────────────────────────────────────────────────┘
                │
                │  HTTP  application/json
