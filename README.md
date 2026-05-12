@@ -102,7 +102,7 @@ Then head to `http://localhost:8000` on your preferred web browser.
 | Endpoint | Description |
 | :--- | :--- |
 | `/` | Homepage |
-| `/fetch-assignments` | Runs the `fetch assignments` pipeline and returns a structured result |
+| `/fetch-assignments` | Runs the `assignment extractor` pipeline and returns a structured result |
 
 ## License
 
