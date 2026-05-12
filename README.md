@@ -86,6 +86,8 @@ To run the project on your local machine, open your terminal and run the followi
 ```bash
 git clone https://github.com/fourtysevencode/pretty-entrar-dashboard.git
 
+pip install -r requirements.txt
+
 cd pretty-entrar-dashboard
 
 uvicorn app:app --reload
