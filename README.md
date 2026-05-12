@@ -1,6 +1,7 @@
 # Pretty Entrar Assignments Dashboard
 
 > User-friendly assignments dashboard for all Entrar users! Check it out at [assignments.ronakbuilds.tech](https://assignments.ronakbuilds.tech)
+> Note: This is an independent student-made interface enhancement project and is **not affiliated with Entrar**.
 
 ## The Problem
 
