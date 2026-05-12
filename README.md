@@ -5,9 +5,9 @@
 
 ## The Problem
 
-It's difficult to find entrar assignments with ease, especially if you're in a hurry. They are hidden behind multiple pages and dropdowns. Pretty Entrar Dashboard comes in and saves you from all the trouble. Simply login with your credentials and find all assignments instantly! No hunting needed anymore.
+It's difficult to find entrar assignments with ease, especially if you're in a hurry. They are hidden behind multiple pages and dropdowns. Pretty Entrar Dashboard comes in and saves you from all the trouble. Simply login with your Entrar credentials and find all your assignments instantly! No hunting needed anymore.
 
-## Structure
+## Project Structure
 
 ```
 pretty-entrar-dashboard/
